@@ -4,15 +4,15 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #4042a6;
 }
 .intro {
   font-style: italic;
-  color: #555;
+  color: #4b34a0;
 }
 
 #highlight {
-  background-color: #343232;
+  background-color: #5d4abe;
   padding: 10px;
 }
 
