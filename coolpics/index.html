@@ -3,41 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cool Pics 📷</title>
+  <title>Cool Pics - Responsive Gallery</title>
+  <meta name="description" content="Responsive image gallery with modal viewer">
+  <meta name="author" content="Ayden Kissell">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="logo.jpg" alt="BYU-Idaho logo">
-      <h1>Cool Pics 📷</h1>
+<header>
+  <nav>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Cool Pics Logo" class="logo-img">
+      <span class="logo-text">Cool Pics</span>
     </div>
+    
+    <!-- Hamburger Menu Button -->
+    <button id="menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    
+    <!-- Navigation Links -->
+    <ul id="navigation" class="hide">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </header>
+<main>
+  <h1>Photo Gallery</h1>
+  <p>Click on any image to view it larger</p>
+  
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <img src="coolpicc.jpg" alt="Cool picture 1">
+    <img src="coolpicc.jpg" alt="Cool picture 2">
+    <img src="coolpicc.jpg" alt="Cool picture 3">
+    <img src="coolpicc.jpg" alt="Cool picture 4">
+    <img src="coolpicc.jpg" alt="Cool picture 5">
+    <img src="coolpicc.jpg" alt="Cool picture 6">
+  </div>
+</main>
 
-  <main>
-    <section class="gallery">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-  <img src="coolpicc.jpg" alt="Steaming geothermal landscape">
-</section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Cool Pics</p>
-  </footer>
+<script src="coolpic.js"></script>
 
 </body>
 </html>
