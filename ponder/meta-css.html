@@ -2,22 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="WDD 131 Meta and CSS practice">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meta & CSS Practice</title>
+  <title>Responsive Gallery with Modals</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>WDD 131 – Meta Tags and CSS Selectors</h1>
 
-  <p class="intro">This page is for my Ponder assignment.</p>
+<h1>Gallery</h1>
 
-  <p id="highlight">This paragraph is styled using an ID selector.</p>
+<section class="gallery">
+  <figure><img src="images/book-sm.jpg" alt="person reading a book"></figure>
+  <figure><img src="images/couch-sm.jpg" alt="person sitting on a couch with a phone"></figure>
+  <figure><img src="images/desk-sm.jpg" alt="a work desktop"></figure>
+  <figure><img src="images/keyboard-sm.jpg" alt="person typing on a keyboard"></figure>
+  <figure><img src="images/phone-sm.jpg" alt="person looking at a phone"></figure>
+  <figure><img src="images/sit-sm.jpg" alt="person sitting on a couch"></figure>
+</section>
 
-  <ul>
-    <li>Meta tags</li>
-    <li>CSS selectors</li>
-    <li>External stylesheets</li>
-  </ul>
+<dialog>
+  <img>
+  <button class="close-viewer">X</button>
+</dialog>
+
+<script src="script.js"></script>
 </body>
 </html>

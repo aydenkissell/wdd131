@@ -1,35 +1,67 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
 h1 {
-  color: #4042a6;
-}
-.intro {
-  font-style: italic;
-  color: #4b34a0;
+  text-align: center;
+  margin: 35px 0;
 }
 
-#highlight {
-  background-color: #5d4abe;
-  padding: 10px;
+.gallery {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-ul li {
-  color: darkgreen;
+figure img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding: 5px;
+  background-color: white;
+  box-shadow: 5px 5px 15px black;
+  display: block;
+  margin: 15px auto;
+  cursor: pointer;
 }
+
+/* Modal styles */
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: none;
+}
+
+dialog img {
+  width: 90%;
+  display: block;
+  margin: 20vh auto;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 10vh;
+  right: 2vh;
+  padding: 3px 6px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Responsive layout */
 @media screen and (min-width: 700px) {
-  nav a {
-    display: inline-block;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  main {
+  .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  dialog img {
+    width: 60%;
+    margin: 15vh auto;
+  }
+
+  .close-viewer {
+    right: 15vh;
   }
 }
