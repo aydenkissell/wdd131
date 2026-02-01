@@ -1,0 +1,60 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Hide class */
+.hide {
+  display: none;
+}
+
+/* Hamburger menu */
+.menu {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.menu div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Animation */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
