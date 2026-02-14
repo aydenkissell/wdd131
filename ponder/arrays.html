@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ponder - Array Methods</title>
+    <link rel="stylesheet" href="stylesarray.css">
+</head>
+<body>
+
+    <h1>Array Methods Practice</h1>
+
+    <section>
+        <h2>Word Lengths (map)</h2>
+        <ul id="wordLengths"></ul>
+    </section>
+
+    <section>
+        <h2>Long Words (filter)</h2>
+        <ul id="longWords"></ul>
+    </section>
+
+    <section>
+        <h2>Student Names (forEach + Template Literal)</h2>
+        <ul id="studentsList"></ul>
+    </section>
+
+    <section>
+        <h2>Total Grade Points (reduce)</h2>
+        <p id="totalPoints"></p>
+    </section>
+
+    <script>
+        // Convert Letter Grades to Points
+        function convert(grade) {
+            let points;
+            switch (grade) {
+                case 'A':
+                    points = 4;
+                    break;
+                case 'B':
+                    points = 3;
+                    break;
+                case 'C':
+                    points = 2;
+                    break;
+                case 'D':
+                    points = 1;
+                    break;
+                case 'F':
+                    points = 0;
+                    break;
+                default:
+                    alert('Not a valid grade');
+            }
+            return points;
+        }
+
+        // Arrays
+        const words = ['watermelon', 'peach', 'apple', 'tomato', 'grape'];
+
+        const students = [
+            { last: 'Andrus', first: 'Aaron' },
+            { last: 'Masa', first: 'Manny' },
+            { last: 'Tanda', first: 'Tamanda' }
+        ];
+
+        const grades = ['A', 'B', 'A', 'C', 'B'];
+
+        // MAP - Word Lengths
+        const wordLengths = words.map(word => word.length);
+        const wordLengthsList = document.getElementById('wordLengths');
+
+        wordLengths.forEach(length => {
+            wordLengthsList.innerHTML += `<li>${length}</li>`;
+        });
+
+        console.log("Word Lengths:", wordLengths);
+
+        // FILTER - Words longer than 5 letters
+        const longWords = words.filter(word => word.length > 5);
+        const longWordsList = document.getElementById('longWords');
+
+        longWords.forEach(word => {
+            longWordsList.innerHTML += `<li>${word}</li>`;
+        });
+
+        console.log("Long Words:", longWords);
+
+        // FOREACH - Student Full Names
+        const studentsList = document.getElementById('studentsList');
+
+        students.forEach(student => {
+            studentsList.innerHTML += `<li>${student.first} ${student.last}</li>`;
+        });
+
+        console.log("Students:", students);
+
+        // REDUCE - Total Grade Points
+        const totalPoints = grades.reduce((total, grade) => {
+            return total + convert(grade);
+        }, 0);
+
+        document.getElementById('totalPoints').textContent =
+            `Total Points: ${totalPoints}`;
+
+        console.log("Total Points:", totalPoints);
+
+    </script>
+
+</body>
+</html>
