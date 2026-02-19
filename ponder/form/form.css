@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.errors {
+  color: red;
+  white-space: pre-line;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout Form</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="form.css">
+  <script src="form.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Checkout</h1>
+</header>
+
+<main>
+  <section class="errors"></section>
+
+  <form id="checkoutForm">
+
+    <label>Full Name:</label>
+    <input type="text" required>
+
+    <label>Email:</label>
+    <input type="email" required>
+
+    <label>Address:</label>
+    <textarea required></textarea>
+
+    <label>Payment Method:</label>
+    <select id="paymentMethod" required>
+      <option value="">Select</option>
+      <option value="creditCard">Credit Card</option>
+      <option value="paypal">PayPal</option>
+    </select>
+
+    <!-- Credit Card Section -->
+    <div id="creditCardSection" class="hide">
+      <label>Credit Card Number:</label>
+      <input type="text" id="creditCardNumber" placeholder="16 digits">
+
+      <label>Expiration Month:</label>
+      <input type="text" id="month" placeholder="MM">
+
+      <label>Expiration Year:</label>
+      <input type="text" id="year" placeholder="YY">
+    </div>
+
+    <!-- PayPal Section -->
+    <div id="paypalSection" class="hide">
+      <label>PayPal Username:</label>
+      <input type="text" id="paypalUsername">
+    </div>
+
+    <button type="submit">Place Order</button>
+
+  </form>
+</main>
+
+</body>
+</html>
