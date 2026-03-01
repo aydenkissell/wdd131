@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Enrollment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #f5f5f5;
+    }
+    h1 { color: #006EB6; }
+    h2 { color: #555; }
+    label { font-weight: bold; margin-right: 0.5rem; }
+    input {
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 80px;
+    }
+    button {
+      padding: 0.4rem 1rem;
+      background: #006EB6;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    button:hover { background: #005a96; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      background: white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    th {
+      background: #006EB6;
+      color: white;
+      padding: 0.6rem 1rem;
+      text-align: left;
+    }
+    td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f0f7ff; }
+    .controls { margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <h1 id="courseName"></h1>
+  <h2 id="courseCode"></h2>
+  <div class="controls">
+    <label for="sectionNumber">Section Number</label>
+    <input id="sectionNumber" type="number" min="1" placeholder="1" />
+    <button id="enrollStudent">Enroll Student</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Section#</th>
+        <th>Room#</th>
+        <th>#Enrolled</th>
+        <th>Days</th>
+        <th>Instructor</th>
+      </tr>
+    </thead>
+    <tbody id="sections"></tbody>
+  </table>
+
+  <script>
+    const aCourse = {
+      code: 'CSE121b',
+      name: 'Javascript Language',
+      logo: 'images/js-logo.png',
+      sections: [
+        { sectionNum: 1, roomNum: 'STC 353', enrolled: 26, days: 'TTh', instructor: 'Bro T' },
+        { sectionNum: 2, roomNum: 'STC 347', enrolled: 28, days: 'TTh', instructor: 'Sis A' }
+      ],
+      enrollStudent: function (sectionNum) {
+        const sectionIndex = this.sections.findIndex(
+          (section) => section.sectionNum == sectionNum
+        );
+        if (sectionIndex >= 0) {
+          this.sections[sectionIndex].enrolled++;
+          renderSections(this.sections);
+        } else {
+          alert(`Section ${sectionNum} not found.`);
+        }
+      }
+    };
+
+    function sectionTemplate(section) {
+      return `<tr>
+        <td>${section.sectionNum}</td>
+        <td>${section.roomNum}</td>
+        <td>${section.enrolled}</td>
+        <td>${section.days}</td>
+        <td>${section.instructor}</td>
+      </tr>`;
+    }
+
+    function renderSections(sections) {
+      const html = sections.map(sectionTemplate);
+      document.querySelector('#sections').innerHTML = html.join('');
+    }
+
+    // Set course info in the DOM
+    document.querySelector('#courseName').textContent = aCourse.name;
+    document.querySelector('#courseCode').textContent = aCourse.code;
+
+    // Initial render
+    renderSections(aCourse.sections);
+
+    // Enroll button click handler
+    document.querySelector('#enrollStudent').addEventListener('click', function () {
+      const sectionNum = document.querySelector('#sectionNumber').value;
+      aCourse.enrollStudent(sectionNum);
+    });
+  </script>
+</body>
+</html>
