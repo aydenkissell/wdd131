@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Card</title>
+
+  <!-- Social Media Meta Information -->
+  <meta property="og:title" content="Character Card - RPG Hero Tracker" />
+  <meta property="og:description" content="Track your RPG character's stats, level up, and survive battles!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Character Card - RPG Hero Tracker" />
+  <meta name="twitter:description" content="Track your RPG character's stats, level up, and survive battles!" />
+  <meta name="twitter:image" content="images/hero.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main>
+    <h1 class="page-title">⚔ Hero's Chronicle ⚔</h1>
+
+    <div class="card" id="characterCard">
+      <div class="card-glow"></div>
+
+      <div class="card-header">
+        <div class="portrait-frame">
+          <img id="charImage" src="images/hero.png" alt="Character portrait" />
+          <div class="portrait-border"></div>
+        </div>
+        <div class="card-title-block">
+          <h2 id="charName" class="char-name"></h2>
+          <p id="charClass" class="char-class"></p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-block">
+          <span class="stat-label">Level</span>
+          <span class="stat-value" id="charLevel"></span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+          <span class="stat-label">Health</span>
+          <span class="stat-value" id="charHealth"></span>
+        </div>
+      </div>
+
+      <div class="health-bar-wrap">
+        <div class="health-bar" id="healthBar"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-attack" id="attackBtn">⚔ Take Hit</button>
+        <button class="btn btn-level" id="levelBtn">✦ Level Up</button>
+      </div>
+
+      <div class="message-box" id="messageBox"></div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
