@@ -1,0 +1,41 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+font-size: 20px;
+max-width: 1280px;
+margin: auto;
+padding: 1em;
+}
+
+img {
+max-width: 100%;
+}
+
+.main-nav {
+list-style-type: none;
+display: flex;
+gap: 20px;
+}
+
+.media-card {
+display: flex;
+gap: 20px;
+margin-top: 20px;
+}
+
+.gallery {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.gallery .media-card {
+flex-direction: column;
+width: 250px;
+}
+
+hr {
+margin-top: 50px;
+}
