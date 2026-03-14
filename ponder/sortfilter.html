@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sort and Filter Hikes</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:40px;
+}
+input{
+  padding:8px;
+  width:250px;
+}
+button{
+  padding:8px;
+}
+.hike{
+  border:1px solid #ddd;
+  padding:15px;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Hike Finder</h1>
+
+<input type="text" id="searchInput" placeholder="Search hikes...">
+<button onclick="searchHikes()">Search</button>
+
+<div id="results"></div>
+
+<script src="sortfilter.js"></script>
+
+</body>
+</html>
