@@ -42,87 +42,34 @@
         </div>
       </div>
 
-      <!-- Search Area -->
-      <div class="search-area">
-        <input type="text" placeholder="Search recipes..." aria-label="Search recipes">
-        <button aria-label="Search">
+      <!-- Search Area — now a form for JS hook -->
+      <form id="search-form" class="search-area" role="search">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search recipes..."
+          aria-label="Search recipes by name, description, or tag"
+          autocomplete="off"
+        >
+        <button type="submit" aria-label="Search">
           <img src="images/search_icon.png" alt="Search">
         </button>
-      </div>
+      </form>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-    <article class="recipe-card">
 
-      <!-- Recipe Image -->
-      <div class="recipe-image-wrap">
-        <img src="images/Apple.jpg" alt="Apple Crisp" class="recipe-image">
-      </div>
+    <!-- Results count line (shown after search) -->
+    <p id="results-count" class="results-count"></p>
 
-      <!-- Recipe Content -->
-      <div class="recipe-content">
+    <!-- Search results injected here by JS -->
+    <section id="search-results"></section>
 
-        <div class="recipe-meta">
-          <h2 class="recipe-title">Apple Crisp</h2>
+    <!-- Random Recipe of the Day injected here by JS -->
+    <section id="random-recipe"></section>
 
-          <!-- Star Rating (accessible) -->
-          <span
-            class="rating"
-            role="img"
-            aria-label="Rating: 4 out of 5 stars"
-          >
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star-empty">☆</span>
-          </span>
-
-          <div class="recipe-stats">
-            <span>🕐 Prep: 15 min</span>
-            <span>🔥 Cook: 45 min</span>
-            <span>🍽 Serves: 8</span>
-          </div>
-        </div>
-
-        <!-- Description (hidden on mobile via CSS) -->
-        <p class="recipe-description">
-          This classic Apple Crisp is the ultimate fall comfort dessert. Tender, cinnamon-spiced
-          apples topped with a golden, buttery oat crumble — it's warm, cozy, and incredibly
-          easy to make. Serve it with a scoop of vanilla ice cream for the perfect finish.
-        </p>
-
-        <!-- Ingredients -->
-        <section class="recipe-section">
-          <h3>Ingredients</h3>
-          <ul>
-            <li>6 medium apples, peeled and sliced</li>
-            <li>2 tbsp sugar</li>
-            <li>1 tsp cinnamon</li>
-            <li>1 cup rolled oats</li>
-            <li>¾ cup all-purpose flour</li>
-            <li>¾ cup brown sugar, packed</li>
-            <li>½ tsp salt</li>
-            <li>½ cup cold butter, cubed</li>
-          </ul>
-        </section>
-
-        <!-- Instructions -->
-        <section class="recipe-section">
-          <h3>Instructions</h3>
-          <ol>
-            <li>Preheat oven to 350°F (175°C). Grease a 9x13 baking dish.</li>
-            <li>Toss apples with sugar and cinnamon. Spread in baking dish.</li>
-            <li>Mix oats, flour, brown sugar, and salt. Cut in butter until crumbly.</li>
-            <li>Sprinkle topping evenly over apples.</li>
-            <li>Bake 40–45 minutes until golden and bubbling. Serve warm.</li>
-          </ol>
-        </section>
-
-      </div>
-    </article>
   </main>
 
   <!-- FOOTER -->
@@ -145,6 +92,10 @@
       <p class="copyright">&copy; 2026 Recipe Book. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- recipes.js must load BEFORE main.js -->
+  <script src="recipes.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>

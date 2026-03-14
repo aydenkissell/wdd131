@@ -1,5 +1,5 @@
 /* ============================================
-   RECIPE BOOK - WDD 131 Prove Part 1
+   RECIPE BOOK - WDD 131 Prove Part 2
    Flexbox Layout | Mobile-First
    ============================================ */
 
@@ -39,19 +39,10 @@ body {
   flex-direction: column;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+img { max-width: 100%; display: block; }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* ============================================
    HEADER
@@ -122,13 +113,8 @@ a:hover {
   transition: background 0.2s;
 }
 
-.search-area input::placeholder {
-  color: rgba(255,255,255,0.6);
-}
-
-.search-area input:focus {
-  background: rgba(255,255,255,0.25);
-}
+.search-area input::placeholder { color: rgba(255,255,255,0.6); }
+.search-area input:focus { background: rgba(255,255,255,0.25); }
 
 .search-area button {
   background: var(--color-accent);
@@ -144,9 +130,7 @@ a:hover {
   transition: background 0.2s;
 }
 
-.search-area button:hover {
-  background: var(--color-accent-light);
-}
+.search-area button:hover { background: var(--color-accent-light); }
 
 .search-area button img {
   width: 18px;
@@ -165,6 +149,33 @@ main {
   width: 100%;
 }
 
+/* Results count text */
+.results-count {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+  min-height: 1.4rem;
+}
+
+/* Section title for random recipe */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-header-bg);
+  margin-bottom: 1rem;
+}
+
+/* No results message */
+.no-results {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
 /* ============================================
    RECIPE CARD
    ============================================ */
@@ -176,6 +187,7 @@ main {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border);
+  margin-bottom: 1.5rem;
 }
 
 /* Recipe Image */
@@ -192,16 +204,14 @@ main {
   transition: transform 0.3s ease;
 }
 
-.recipe-image:hover {
-  transform: scale(1.02);
-}
+.recipe-image:hover { transform: scale(1.02); }
 
 /* Recipe Content */
 .recipe-content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 /* Meta: title, rating, stats */
@@ -249,7 +259,7 @@ main {
   border: 1px solid var(--color-border);
 }
 
-/* Description - hidden on mobile */
+/* Description — hidden on mobile */
 .recipe-description {
   display: none;
   font-size: 1rem;
@@ -258,6 +268,23 @@ main {
   line-height: 1.7;
   border-left: 3px solid var(--color-accent-light);
   padding-left: 1rem;
+}
+
+/* Tags */
+.recipe-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: var(--color-header-bg);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  text-transform: lowercase;
 }
 
 /* Recipe Sections (Ingredients / Instructions) */
@@ -335,23 +362,10 @@ main {
   filter: brightness(0) invert(1);
 }
 
-.attribution {
-  font-size: 0.78rem;
-  color: #888;
-}
-
-.attribution a {
-  color: #aaa;
-}
-
-.attribution a:hover {
-  color: var(--color-accent-light);
-}
-
-.copyright {
-  font-size: 0.78rem;
-  color: #666;
-}
+.attribution { font-size: 0.78rem; color: #888; }
+.attribution a { color: #aaa; }
+.attribution a:hover { color: var(--color-accent-light); }
+.copyright { font-size: 0.78rem; color: #666; }
 
 /* ============================================
    TABLET & DESKTOP (min-width: 600px)
@@ -370,11 +384,9 @@ main {
   }
 
   /* Show description on larger screens */
-  .recipe-description {
-    display: block;
-  }
+  .recipe-description { display: block; }
 
-  /* Side-by-side layout for recipe on desktop */
+  /* Side-by-side card layout */
   .recipe-card {
     flex-direction: row;
     align-items: stretch;
@@ -391,9 +403,7 @@ main {
     max-height: none;
   }
 
-  .recipe-content {
-    padding: 2rem;
-  }
+  .recipe-content { padding: 2rem; }
 
   .footer-inner {
     flex-direction: row;
@@ -403,11 +413,6 @@ main {
 }
 
 @media (min-width: 900px) {
-  .title-area h1 {
-    font-size: 3rem;
-  }
-
-  .recipe-image-wrap {
-    width: 380px;
-  }
+  .title-area h1 { font-size: 3rem; }
+  .recipe-image-wrap { width: 380px; }
 }
