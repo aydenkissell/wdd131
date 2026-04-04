@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymTrack – Log. Lift. Improve.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/gymlogo.png" alt="GymTrack Logo" class="logo-img">
+        <span class="logo-text">GYM<span class="accent">TRACK</span></span>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="log.html" class="nav-link">My Log</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Your personal gym companion</p>
+      <h1 class="hero-title">LOG.<br>LIFT.<br><span class="accent">IMPROVE.</span></h1>
+      <p class="hero-sub">Track every rep, every set, every PR. Built for college athletes and beginners who want results without the complexity.</p>
+      <a href="log.html" class="cta-btn">Start Tracking →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card" id="stat-workouts">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Workouts Logged</span>
+      </div>
+      <div class="stat-card" id="stat-exercises">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Exercises Tracked</span>
+      </div>
+      <div class="stat-card" id="stat-streak">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Day Streak</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2 class="section-title fade-up">Everything You Need</h2>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">📋</div>
+        <h3>Log Workouts</h3>
+        <p>Add exercises, sets, reps, and weight in seconds. No bloat, no confusion.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🔍</div>
+        <h3>Filter by Muscle</h3>
+        <p>View your chest, back, legs, and arms history separately. Know what needs work.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">💪</div>
+        <h3>Track Progress</h3>
+        <p>See if your lifts are a strong PR or room to improve — instantly.</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">💾</div>
+        <h3>Saved Locally</h3>
+        <p>Your data stays on your device. No account needed, no data collected.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-add fade-up">
+    <h2 class="section-title">Quick Add a Workout</h2>
+    <form class="workout-form" id="quickForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="exercise">Exercise</label>
+          <input type="text" id="exercise" placeholder="e.g. Bench Press" required>
+        </div>
+        <div class="form-group">
+          <label for="muscle">Muscle Group</label>
+          <select id="muscle" required>
+            <option value="">Select...</option>
+            <option value="Chest">Chest</option>
+            <option value="Back">Back</option>
+            <option value="Legs">Legs</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Arms">Arms</option>
+            <option value="Core">Core</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="weight">Weight (lbs)</label>
+          <input type="number" id="weight" placeholder="185" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="reps">Reps</label>
+          <input type="number" id="reps" placeholder="8" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="sets">Sets</label>
+          <input type="number" id="sets" placeholder="3" min="1" required>
+        </div>
+      </div>
+      <button type="submit" class="cta-btn">Add to Log</button>
+      <p class="form-feedback" id="formFeedback"></p>
+    </form>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-inner">
+      <span class="quote-mark">"</span>
+      <p class="quote-text" id="dailyQuote"></p>
+    </div>
+  </section>
+
+  <section class="pb-section fade-up">
+    <h2 class="section-title">Personal Bests 🏆</h2>
+    <div class="pb-grid" id="pbGrid">
+      <p class="empty-msg">No workouts yet — log some lifts to see your personal bests!</p>
+    </div>
+  </section>
+
+  <section class="recent-section fade-up">
+    <div class="recent-header">
+      <h2 class="section-title">Recent Workouts</h2>
+      <a href="log.html" class="view-all">View All →</a>
+    </div>
+    <div class="recent-list" id="recentList">
+      <p class="empty-msg">No workouts yet. Add one above!</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>GymTrack &copy; 2026 — Built by Ayden Kissell | WDD 131</p>
+  </footer>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/home.js"></script>
+  <script>
+    // Intersection Observer for scroll fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

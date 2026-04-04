@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Log – GymTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/gymlogo.png" alt="GymTrack Logo" class="logo-img">
+        <span class="logo-text">GYM<span class="accent">TRACK</span></span>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="log.html" class="nav-link active">My Log</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="log-hero fade-up">
+    <h1 class="log-title">MY <span class="accent">LOG</span></h1>
+    <p class="log-sub">Every lift you've ever recorded — all in one place.</p>
+  </section>
+
+  <section class="log-controls">
+    <div class="filter-bar">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Chest">Chest</button>
+      <button class="filter-btn" data-filter="Back">Back</button>
+      <button class="filter-btn" data-filter="Legs">Legs</button>
+      <button class="filter-btn" data-filter="Shoulders">Shoulders</button>
+      <button class="filter-btn" data-filter="Arms">Arms</button>
+      <button class="filter-btn" data-filter="Core">Core</button>
+    </div>
+    <div class="log-actions">
+      <input type="text" id="searchInput" placeholder="Search exercise..." class="search-input">
+      <button class="danger-btn" id="clearAllBtn">Clear All</button>
+    </div>
+  </section>
+
+  <section class="log-section">
+    <div class="log-summary" id="logSummary"></div>
+    <div class="log-grid" id="logGrid">
+      <div class="empty-state">
+        <div class="empty-icon">🏋️</div>
+        <h3 class="empty-title">No Workouts Yet</h3>
+        <p class="empty-desc">You haven't logged any workouts. Get off the couch and start tracking!</p>
+        <a href="index.html" class="cta-btn">Log Your First Lift →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>GymTrack &copy; 2026 — Built by Ayden Kissell | WDD 131</p>
+  </footer>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/log.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
